@@ -1,4 +1,10 @@
 params:
+  - id: time_zone_for_backup
+    type: string
+    name: "time zone for backup"
+    default_value: "CST"
+    description: "the time zone for backup"
+
   - id: rclone_global_flag
     type: string
     name: "rclone global flag"
@@ -104,6 +110,40 @@ params:
     default_value: "CST"
     description: "the time zone for backup"
 
+  - id: mail_smtp_enable
+    type: bool
+    name: "Enable sending mail."
+    default_value: false
+    description: "enable mail smtp，ref https://github.com/ttionya/vaultwarden-backup/issues/117#issuecomment-1691443179"
+
+  - id: mail_smtp_variables
+    type: string
+    name: "Mail sending options"
+    description: "the mail smtp variables"
+
+  - id: mail_to
+    type: string
+    name: "mail to"
+    description: "The recipient of the notification email."
+
+  - id: mail_when_success
+    type: bool
+    name: "mail when success"
+    default_value: true
+    description: "Send an email when the backup completes successfully."
+
+  - id: mail_when_failure
+    type: bool
+    name: "mail when failure"
+    default_value: true
+    description: "Send an email if the backup fails."
+
+  - id: mail_force_thread
+    type: bool
+    name: "mail force thread"
+    default_value: false
+    description: "Particularly useful when mail clients fail to group related messages in conversation view despite identical subjects."
+
 locales:
   zh:
     rclone_global_flag:
@@ -173,3 +213,27 @@ locales:
     time_zone_for_backup:
       name: "备份任务时区"
       description: "备份任务的时区"
+
+    mail_smtp_enable:
+      name: "启用邮件发送"
+      description: "启用邮件SMTP功能，参考 https://github.com/ttionya/vaultwarden-backup/issues/117#issuecomment-1691443179"
+
+    mail_smtp_variables:
+      name: "邮件发送选项"
+      description: "邮件SMTP变量配置"
+
+    mail_to:
+      name: "收件人"
+      description: "通知邮件的收件人地址"
+
+    mail_when_success:
+      name: "成功时发送邮件"
+      description: "当备份成功完成时发送邮件"
+
+    mail_when_failure:
+      name: "失败时发送邮件"
+      description: "当备份失败时发送邮件"
+
+    mail_force_thread:
+      name: "强制邮件线程"
+      description: "当邮件客户端无法将相同主题的相关邮件在会话视图中分组时特别有用"

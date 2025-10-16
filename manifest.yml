@@ -55,12 +55,12 @@ services:
       #   PING_URL_WHEN_SUCCESS_CURL_OPTIONS: ''
       #   PING_URL_WHEN_FAILURE: ''
       #   PING_URL_WHEN_FAILURE_CURL_OPTIONS: ''
-      #   MAIL_SMTP_ENABLE: 'FALSE'
-      #   MAIL_SMTP_VARIABLES: ''
-      #   MAIL_TO: ''
-      #   MAIL_WHEN_SUCCESS: 'TRUE'
-      #   MAIL_WHEN_FAILURE: 'TRUE'
-      #   MAIL_FORCE_THREAD: 'FALSE'
+      - MAIL_SMTP_ENABLE={{.U.mail_smtp_enable}}
+      - MAIL_SMTP_VARIABLES={{.U.mail_smtp_variables}}
+      - MAIL_TO={{.U.mail_to}}
+      - MAIL_WHEN_SUCCESS={{.U.mail_when_success}}
+      - MAIL_WHEN_FAILURE={{.U.mail_when_failure}}
+      - MAIL_FORCE_THREAD={{.U.mail_force_thread}}
 
     binds:
       - /lzcapp/var/data:/bitwarden/data/
