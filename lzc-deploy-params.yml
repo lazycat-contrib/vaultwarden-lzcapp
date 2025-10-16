@@ -1,0 +1,175 @@
+params:
+  - id: rclone_global_flag
+    type: string
+    name: "rclone global flag"
+    optional: true
+    description: "the global flag for rclone to perform operations"
+
+  - id: backup_cron
+    type: string
+    default_value: "0 */3 * * *"
+    name: "backup cron"
+    description: "the cron expression for backup"
+
+  - id: backup_keep_days
+    type: string
+    default_value: "0"
+    name: "backup keep days"
+    description: "the number of days to keep backup,0 means no cleanup"
+
+  - id: enable_backup_compression
+    type: bool
+    name: "enable backup compression"
+    default_value: true
+    description: "whether to enable backup compression"
+
+  - id: backup_compression_type
+    type: string
+    name: "compression type"
+    default_value: "7z"
+    description: "the compression type for backup,can be zip or 7z"
+
+  - id: backup_compression_password
+    type: string
+    optional: true
+    name: "password of compression"
+    description: "the password to encrypt the compression"
+
+  - id: rclone_remote_name
+    type: string
+    name: "rclone remote name"
+    description: "the remote name in rclone config"
+
+  - id: rclone_remote_dir
+    type: string
+    name: "rclone remote directory"
+    default_value: "valutwardenbackup"
+    description: "the remote directory in rclone config"
+
+  - id: rclone_remote_name_1
+    type: string
+    name: "rclone remote name 1"
+    optional: true
+    description: "the remote name in rclone config"
+
+  - id: rclone_remote_dir_1
+    type: string
+    name: "rclone remote directory 1"
+    default_value: "valutwardenbackup"
+    optional: true
+    description: "the remote directory in rclone config"
+
+  - id: rclone_remote_name_2
+    type: string
+    name: "rclone remote name 2"
+    optional: true
+    description: "the remote name in rclone config"
+
+  - id: rclone_remote_dir_2
+    type: string
+    name: "rclone remote directory 2"
+    default_value: "valutwardenbackup"
+    optional: true
+    description: "the remote directory in rclone config"
+
+  - id: rclone_remote_name_3
+    type: string
+    name: "rclone remote name 3"
+    optional: true
+    description: "the remote name in rclone config"
+
+  - id: rclone_remote_dir_3
+    type: string
+    name: "rclone remote directory 3"
+    default_value: "valutwardenbackup"
+    optional: true
+    description: "the remote directory in rclone config"
+
+  - id: rclone_remote_name_4
+    type: string
+    name: "rclone remote name 4"
+    optional: true
+    description: "the remote name in rclone config"
+
+  - id: rclone_remote_dir_4
+    type: string
+    name: "rclone remote directory 4"
+    default_value: "valutwardenbackup"
+    optional: true
+    description: "the remote directory in rclone config"
+
+  - id: time_zone_for_backup
+    type: string
+    name: "time zone for backup"
+    default_value: "CST"
+    description: "the time zone for backup"
+
+locales:
+  zh:
+    rclone_global_flag:
+      name: "Rclone全局参数"
+      description: "传递到Rclone的全局参数"
+
+    backup_cron:
+      name: "备份任务Cron表达式"
+      description: "备份任务的Cron表达式"
+
+    backup_keep_days:
+      name: "备份保留天数"
+      description: "备份保留的天数，0表示不清理"
+
+    enable_backup_compression:
+      name: "启用备份压缩"
+      description: "是否启用备份压缩"
+
+    backup_compression_type:
+      name: "压缩类型"
+      description: "备份的压缩类型，可以是zip或7z"
+
+    backup_compression_password:
+      name: "压缩密码"
+      description: "用于加密压缩包的密码"
+
+    rclone_remote_name:
+      name: "Rclone远程名称"
+      description: "Rclone配置中的远程名称"
+
+    rclone_remote_dir:
+      name: "Rclone远程目录"
+      description: "Rclone配置中的远程目录"
+
+    rclone_remote_name_1:
+      name: "Rclone远程名称1"
+      description: "Rclone配置中的远程名称"
+
+    rclone_remote_dir_1:
+      name: "Rclone远程目录1"
+      description: "Rclone配置中的远程目录"
+
+    rclone_remote_name_2:
+      name: "Rclone远程名称2"
+      description: "Rclone配置中的远程名称"
+
+    rclone_remote_dir_2:
+      name: "Rclone远程目录2"
+      description: "Rclone配置中的远程目录"
+
+    rclone_remote_name_3:
+      name: "Rclone远程名称3"
+      description: "Rclone配置中的远程名称"
+
+    rclone_remote_dir_3:
+      name: "Rclone远程目录3"
+      description: "Rclone配置中的远程目录"
+
+    rclone_remote_name_4:
+      name: "Rclone远程名称4"
+      description: "Rclone配置中的远程名称"
+
+    rclone_remote_dir_4:
+      name: "Rclone远程目录4"
+      description: "Rclone配置中的远程目录"
+
+    time_zone_for_backup:
+      name: "备份任务时区"
+      description: "备份任务的时区"

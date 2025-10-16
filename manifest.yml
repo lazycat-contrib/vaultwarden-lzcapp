@@ -1,0 +1,75 @@
+name: Vaultwarden
+package: community.lazycat.app.vaultwarden
+version: 1.34.3
+min_os_version: 1.3.8
+description: 用 Rust 编写的非官方 Bitwarden 兼容服务器，曾被称为 bitwarden_rs
+homepage: https://github.com/dani-garcia/vaultwarden
+author: dani-garcia
+application:
+  subdomain: vaultwarden
+  background_task: true
+  public_path:
+    - /
+
+  upstreams:
+    - location: /
+      backend: http://vaultwarden:80/
+
+services:
+  vaultwarden:
+    container_name: vaultwarden
+    #  vaultwarden/server:1.34.3
+    image: docker.1ms.run/vaultwarden/server:1.34.3
+    binds:
+      - /lzcapp/var/data:/data/
+
+  vaultwarden-backup:
+    # ttionya/vaultwarden-backup:1.25.2
+    image: docker.1ms.run/ttionya/vaultwarden-backup:1.25.2
+    environment:
+      - RCLONE_GLOBAL_FLAG={{.U.rclone_global_flag}}
+
+      - CRON={{.U.backup_cron}}
+      - ZIP_ENABLE={{.U.enable_backup_compression}}
+      - ZIP_PASSWORD={{.U.backup_compression_password}}
+      - ZIP_TYPE={{.U.backup_compression_type}}
+      - BACKUP_FILE_SUFFIX='%Y%m%d'
+      - BACKUP_KEEP_DAYS={{.U.backup_keep_days}}
+      - TIMEZONE={{.U.time_zone_for_backup}}
+
+      - RCLONE_REMOTE_NAME={{.U.rclone_remote_name}}
+      - RCLONE_REMOTE_DIR={{.U.rclone_remote_dir}}
+      - RCLONE_REMOTE_NAME_1={{.U.rclone_remote_name_1}}
+      - RCLONE_REMOTE_DIR_1={{.U.rclone_remote_dir_1}}
+      - RCLONE_REMOTE_NAME_2={{.U.rclone_remote_name_2}}
+      - RCLONE_REMOTE_DIR_2={{.U.rclone_remote_dir_2}}
+      - RCLONE_REMOTE_NAME_3={{.U.rclone_remote_name_3}}
+      - RCLONE_REMOTE_DIR_3={{.U.rclone_remote_dir_3}}
+      - RCLONE_REMOTE_NAME_4={{.U.rclone_remote_name_4}}
+      - RCLONE_REMOTE_DIR_4={{.U.rclone_remote_dir_4}}
+      #   PING_URL: ''
+      #   PING_URL_CURL_OPTIONS: ''
+      #   PING_URL_WHEN_START: ''
+      #   PING_URL_WHEN_START_CURL_OPTIONS: ''
+      #   PING_URL_WHEN_SUCCESS: ''
+      #   PING_URL_WHEN_SUCCESS_CURL_OPTIONS: ''
+      #   PING_URL_WHEN_FAILURE: ''
+      #   PING_URL_WHEN_FAILURE_CURL_OPTIONS: ''
+      #   MAIL_SMTP_ENABLE: 'FALSE'
+      #   MAIL_SMTP_VARIABLES: ''
+      #   MAIL_TO: ''
+      #   MAIL_WHEN_SUCCESS: 'TRUE'
+      #   MAIL_WHEN_FAILURE: 'TRUE'
+      #   MAIL_FORCE_THREAD: 'FALSE'
+
+    binds:
+      - /lzcapp/var/data:/bitwarden/data/
+      - /lzcapp/var/config:/config/
+
+locales:
+  zh:
+    name: "Vaultwarden"
+    description: "用 Rust 编写的非官方 Bitwarden 兼容服务器，曾被称为 bitwarden_rs"
+  en:
+    name: "Vaultwarden"
+    description: "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs"
