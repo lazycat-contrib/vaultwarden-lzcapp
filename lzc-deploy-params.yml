@@ -104,12 +104,6 @@ params:
     optional: true
     description: "the remote directory in rclone config"
 
-  - id: time_zone_for_backup
-    type: string
-    name: "time zone for backup"
-    default_value: "CST"
-    description: "the time zone for backup"
-
   - id: mail_smtp_enable
     type: bool
     name: "Enable sending mail."
