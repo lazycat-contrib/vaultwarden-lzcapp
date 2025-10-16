@@ -112,12 +112,16 @@ params:
 
   - id: mail_smtp_variables
     type: string
+    optional: true
     name: "Mail sending options"
+    default_value: ""
     description: "the mail smtp variables"
 
   - id: mail_to
     type: string
     name: "mail to"
+    optional: true
+    default_value: "czyt@w.cn"
     description: "The recipient of the notification email."
 
   - id: mail_when_success
