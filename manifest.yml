@@ -39,16 +39,22 @@ services:
       - TIMEZONE={{.U.time_zone_for_backup}}
       - RCLONE_REMOTE_NAME={{.U.rclone_remote_name}}
       - RCLONE_REMOTE_DIR={{.U.rclone_remote_dir}}
+
       - RCLONE_REMOTE_NAME_1={{.U.rclone_remote_name_1}}
       - RCLONE_REMOTE_DIR_1={{.U.rclone_remote_dir_1}}
+
       - RCLONE_REMOTE_NAME_2={{.U.rclone_remote_name_2}}
       - RCLONE_REMOTE_DIR_2={{.U.rclone_remote_dir_2}}
+
       - RCLONE_REMOTE_NAME_3={{.U.rclone_remote_name_3}}
       - RCLONE_REMOTE_DIR_3={{.U.rclone_remote_dir_3}}
+
       - RCLONE_REMOTE_NAME_4={{.U.rclone_remote_name_4}}
       - RCLONE_REMOTE_DIR_4={{.U.rclone_remote_dir_4}}
+
       - RCLONE_REMOTE_NAME_5={{.U.rclone_remote_name_5}}
       - RCLONE_REMOTE_DIR_5={{.U.rclone_remote_dir_5}}
+
       - RCLONE_REMOTE_NAME_6={{.U.rclone_remote_name_6}}
       - RCLONE_REMOTE_DIR_6={{.U.rclone_remote_dir_6}}
       #   PING_URL: ''
