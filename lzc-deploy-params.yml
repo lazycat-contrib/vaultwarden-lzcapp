@@ -104,6 +104,32 @@ params:
     optional: true
     description: "the remote directory in rclone config"
 
+  - id: rclone_remote_name_5
+    type: string
+    name: "rclone remote name 5"
+    optional: true
+    description: "the remote name in rclone config"
+
+  - id: rclone_remote_dir_5
+    type: string
+    name: "rclone remote directory 5"
+    default_value: "valutwardenbackup"
+    optional: true
+    description: "the remote directory in rclone config"
+
+  - id: rclone_remote_name_6
+    type: string
+    name: "rclone remote name 6"
+    optional: true
+    description: "the remote name in rclone config"
+
+  - id: rclone_remote_dir_6
+    type: string
+    name: "rclone remote directory 6"
+    default_value: "valutwardenbackup"
+    optional: true
+    description: "the remote directory in rclone config"
+
   - id: mail_smtp_enable
     type: bool
     name: "Enable sending mail."
@@ -206,6 +232,22 @@ locales:
 
     rclone_remote_dir_4:
       name: "Rclone远程目录4"
+      description: "Rclone配置中的远程目录"
+
+    rclone_remote_name_5:
+      name: "Rclone远程名称5"
+      description: "Rclone配置中的远程名称"
+
+    rclone_remote_dir_5:
+      name: "Rclone远程目录5"
+      description: "Rclone配置中的远程目录"
+
+    rclone_remote_name_6:
+      name: "Rclone远程名称6"
+      description: "Rclone配置中的远程名称"
+
+    rclone_remote_dir_6:
+      name: "Rclone远程目录6"
       description: "Rclone配置中的远程目录"
 
     time_zone_for_backup:
