@@ -23,6 +23,7 @@ services:
     binds:
       - /lzcapp/var/data:/data/
 
+{{ if .U.enable_auto_backup }}
   vaultwarden-backup:
     # adrienpoupa/rclone-backup:1.1.0
     image: docker.1ms.run/adrienpoupa/rclone-backup:1.1.0
@@ -75,7 +76,7 @@ services:
     binds:
       - /lzcapp/var/data:/data/
       - /lzcapp/var/config:/config/
-
+{{ end }}
 locales:
   zh:
     name: "Vaultwarden"

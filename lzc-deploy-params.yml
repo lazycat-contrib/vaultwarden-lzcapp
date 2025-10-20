@@ -1,8 +1,15 @@
 params:
+  - id: enable_auto_backup
+    type: bool
+    name: "enable backup"
+    default_value: true
+    description: "whether to enable backup,if set to false.will start vaultwarden only，and the other params are un-nessary"
+
   - id: time_zone_for_backup
     type: string
     name: "time zone for backup"
     default_value: "CST"
+    optional: true
     description: "the time zone for backup"
 
   - id: rclone_global_flag
@@ -15,12 +22,14 @@ params:
     type: string
     default_value: "0 */3 * * *"
     name: "backup cron"
+    optional: true
     description: "the cron expression for backup"
 
   - id: backup_keep_days
     type: string
     default_value: "0"
     name: "backup keep days"
+    optional: true
     description: "the number of days to keep backup,0 means no cleanup"
 
   - id: enable_backup_compression
@@ -44,12 +53,14 @@ params:
   - id: rclone_remote_name
     type: string
     name: "rclone remote name"
+    optional: true
     description: "the remote name in rclone config"
 
   - id: rclone_remote_dir
     type: string
     name: "rclone remote directory"
     default_value: "valutwardenbackup"
+    optional: true
     description: "the remote directory in rclone config"
 
   - id: rclone_remote_name_1
@@ -170,6 +181,10 @@ params:
 
 locales:
   zh:
+    enable_auto_backup:
+      name: "是否开启自动备份"
+      description: "如果不启用自动备份，则只运行单独的vaultwarden服务,其他参数将是不必要的。"
+
     rclone_global_flag:
       name: "Rclone全局参数"
       description: "传递到Rclone的全局参数"
