@@ -141,6 +141,40 @@ params:
     optional: true
     description: "the remote directory in rclone config"
 
+  - id: serverchan_enable
+    type: bool
+    name: "enable sending notify via server chan"
+    default_value: false
+    optional: true
+    description: "you can login from the https://sc3.ft07.com to start"
+
+  - id: serverchan_sendkey
+    type: string
+    name: "the send key for serverchan"
+    optional: true
+    description: "you should get sendkey from https://sc3.ft07.com/sendkey"
+
+  - id: serverchan_when_start
+    type: bool
+    name: "notify via server chan when backup start"
+    default_value: false
+    optional: true
+    description: "sending notify via server chan when backup start"
+
+  - id: serverchan_when_success
+    type: bool
+    name: "notify via server chan when backup success"
+    default_value: false
+    optional: true
+    description: "sending notify via server chan when backup success"
+
+  - id: serverchan_when_failure
+    type: bool
+    name: "notify via server chan when backup failed"
+    default_value: false
+    optional: true
+    description: "sending notify via server chan when backup failed"
+
   - id: mail_smtp_enable
     type: bool
     name: "Enable sending mail."
@@ -292,3 +326,23 @@ locales:
     mail_force_thread:
       name: "强制邮件线程"
       description: "当邮件客户端无法将相同主题的相关邮件在会话视图中分组时特别有用"
+
+    serverchan_enable:
+      name: "启用Server酱通知"
+      description: "是否启用Server酱通知功能，可从 https://sc3.ft07.com 登录开始使用"
+
+    serverchan_sendkey:
+      name: "Server酱SendKey"
+      description: "从 https://sc3.ft07.com/sendkey 获取的SendKey"
+
+    serverchan_when_start:
+      name: "备份开始时通知"
+      description: "当备份开始时通过Server酱发送通知"
+
+    serverchan_when_success:
+      name: "备份成功时通知"
+      description: "当备份成功完成时通过Server酱发送通知"
+
+    serverchan_when_failure:
+      name: "备份失败时通知"
+      description: "当备份失败时通过Server酱发送通知"
