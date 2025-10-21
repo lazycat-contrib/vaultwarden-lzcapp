@@ -152,7 +152,7 @@ params:
     type: string
     name: "the send key for serverchan"
     optional: true
-    description: "you should get sendkey from https://sc3.ft07.com/sendkey"
+    description: "you should get sendkey from https://sc3.ft07.com/sendkey( for app push ) or https://sct.ftqq.com/sendkey( for wechat push)"
 
   - id: serverchan_when_start
     type: bool
@@ -333,7 +333,7 @@ locales:
 
     serverchan_sendkey:
       name: "Server酱SendKey"
-      description: "从 https://sc3.ft07.com/sendkey 获取的SendKey"
+      description: "从 https://sc3.ft07.com/sendkey（Server酱app推送） 或者 https://sct.ftqq.com/sendkey（微信推送） 获取的SendKey"
 
     serverchan_when_start:
       name: "备份开始时通知"
