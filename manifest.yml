@@ -19,14 +19,14 @@ services:
   vaultwarden:
     container_name: vaultwarden
     #  vaultwarden/server:1.34.3
-    image: docker.1ms.run/vaultwarden/server:1.34.3
+    image: registry.lazycat.cloud/czyt/vaultwarden/server:c660a371ce9cf96b
     binds:
       - /lzcapp/var/data:/data/
 
 {{ if .U.enable_auto_backup }}
   vaultwarden-backup:
-    # czyt/rclone-backup:1.1.1
-    image: docker.1ms.run/czyt/rclone-backup:1.1.2
+    # czyt/rclone-backup:1.1.2
+    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:d56ec548acc64f4a
     environment:
       - BACKUP_FOLDER_NAME=data
       - BACKUP_FOLDER_PATH=/data
