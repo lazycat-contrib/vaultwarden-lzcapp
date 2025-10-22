@@ -145,7 +145,6 @@ params:
     type: bool
     name: "enable sending notify via server chan"
     default_value: false
-    optional: true
     description: "you can login from the https://sc3.ft07.com to start"
 
   - id: serverchan_sendkey
