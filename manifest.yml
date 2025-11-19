@@ -25,8 +25,8 @@ services:
 
 {{ if .U.enable_auto_backup }}
   vaultwarden-backup:
-    # czyt/rclone-backup:1.1.2
-    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:d56ec548acc64f4a
+    # czyt/rclone-backup:1.1.3
+    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:401f26b4c063ff78
     environment:
       - BACKUP_FOLDER_NAME=data
       - BACKUP_FOLDER_PATH=/data
@@ -37,6 +37,7 @@ services:
       - ZIP_TYPE={{.U.backup_compression_type}}
       - BACKUP_FILE_SUFFIX=%Y%m%d
       - BACKUP_KEEP_DAYS={{.U.backup_keep_days}}
+      - BACKUP_KEEP_COUNT={{.U.backup_keep_count}}
       - TIMEZONE={{.U.time_zone_for_backup}}
       # rclone远端配置
       - RCLONE_REMOTE_NAME={{.U.rclone_remote_name}}
@@ -59,6 +60,9 @@ services:
 
       - RCLONE_REMOTE_NAME_6={{.U.rclone_remote_name_6}}
       - RCLONE_REMOTE_DIR_6={{.U.rclone_remote_dir_6}}
+
+      - RCLONE_REMOTE_NAME_7={{.U.rclone_remote_name_7}}
+      - RCLONE_REMOTE_DIR_7={{.U.rclone_remote_dir_7}}
       #   PING_URL: ''
       #   PING_URL_CURL_OPTIONS: ''
       #   PING_URL_WHEN_START: ''
