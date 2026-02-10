@@ -161,6 +161,19 @@ params:
     optional: true
     description: "the remote directory in rclone config"
 
+  - id: rclone_remote_name_8
+    type: string
+    name: "rclone remote name 8"
+    optional: true
+    description: "the remote name in rclone config"
+
+  - id: rclone_remote_dir_8
+    type: string
+    name: "rclone remote directory 8"
+    default_value: "valutwardenbackup"
+    optional: true
+    description: "the remote directory in rclone config"
+
   - id: serverchan_enable
     type: bool
     name: "enable sending notify via server chan"
@@ -328,6 +341,14 @@ locales:
 
     rclone_remote_dir_7:
       name: "Rclone远程目录7"
+      description: "Rclone配置中的远程目录"
+
+    rclone_remote_name_8:
+      name: "Rclone远程名称8"
+      description: "Rclone配置中的远程名称"
+
+    rclone_remote_dir_8:
+      name: "Rclone远程目录8"
       description: "Rclone配置中的远程目录"
 
     time_zone_for_backup:

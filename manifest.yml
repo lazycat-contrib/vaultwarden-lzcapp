@@ -63,6 +63,9 @@ services:
 
       - RCLONE_REMOTE_NAME_7={{.U.rclone_remote_name_7}}
       - RCLONE_REMOTE_DIR_7={{.U.rclone_remote_dir_7}}
+
+      - RCLONE_REMOTE_NAME_8={{.U.rclone_remote_name_8}}
+      - RCLONE_REMOTE_DIR_8={{.U.rclone_remote_dir_8}}
       #   PING_URL: ''
       #   PING_URL_CURL_OPTIONS: ''
       #   PING_URL_WHEN_START: ''
