@@ -52,7 +52,7 @@ params:
     description: "the compression type for backup,can be zip or 7z"
 
   - id: backup_compression_password
-    type: string
+    type: secret
     optional: true
     name: "password of compression"
     description: "the password to encrypt the compression"
