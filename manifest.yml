@@ -11,15 +11,15 @@ application:
 services:
   vaultwarden:
     container_name: vaultwarden
-    #  vaultwarden/server:1.35.4
-    image: registry.lazycat.cloud/czyt/vaultwarden/server:4b4bc71e53757790
+    #  vaultwarden/server:1.35.7
+    image: registry.lazycat.cloud/czyt/vaultwarden/server:a36a5b4d99f9bd69
     binds:
       - /lzcapp/var/data:/data/
 
 {{ if .U.enable_auto_backup }}
   vaultwarden-backup:
-    # czyt/rclone-backup:1.1.8
-    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:3ff39ab011bc5d9f
+    # czyt/rclone-backup:1.1.9
+    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:d520f8c707bfff86
     environment:
       - BACKUP_FOLDER_NAME=data
       - BACKUP_FOLDER_PATH=/data
