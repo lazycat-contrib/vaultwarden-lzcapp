@@ -10,6 +10,10 @@ locales:
   zh:
     name: "Vaultwarden+"
     description: "Vaultwarden增强版，支持自动加密备份和上传到多个云端目标，提供server酱及邮件通知。"
+    entries.portal.title: "Vaultwarden密码登录"
+    entries.admin.title: "Vaultwarden 管理面板"
   en:
     name: "Vaultwarden+"
     description: "Vaultwarden Plus edtion，support auto crypt backup and upload to muti cloud target,notify via serverchan and email."
+    entries.portal.title: "Vaultwarden Portal"
+    entries.admin.title: "Vaultwarden Admin Panel"

@@ -1,5 +1,13 @@
 application:
   subdomain: vaultwarden
+  entries:
+    - id: portal
+      title: "vaultwarden"
+      path: /
+    - id: admin
+      title: "Vaultwarden Admin Panel"
+      path: /admin
+
   background_task: true
   public_path:
     - /
