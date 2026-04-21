@@ -26,8 +26,8 @@ services:
 
 {{ if .U.enable_auto_backup }}
   vaultwarden-backup:
-    # czyt/rclone-backup:1.1.9
-    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:d520f8c707bfff86
+    # czyt/rclone-backup:1.1.10
+    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:87deedd76517b419
     environment:
       - BACKUP_FOLDER_NAME=data
       - BACKUP_FOLDER_PATH=/data
