@@ -1,6 +1,6 @@
 name: Vaultwarden+
 package: community.lazycat.app.vaultwarden
-version: 1.35.7
+version: 1.35.8
 min_os_version: 1.5.0
 description: Vaultwarden增强版，支持自动加密备份和上传到多个云端目标，提供server酱及邮件通知。
 homepage: https://github.com/dani-garcia/vaultwarden
