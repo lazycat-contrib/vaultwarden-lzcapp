@@ -19,8 +19,8 @@ application:
 services:
   vaultwarden:
     container_name: vaultwarden
-    #  vaultwarden/server:1.35.8
-    image: registry.lazycat.cloud/czyt/vaultwarden/server:89fda3155b6010f0
+    #  vaultwarden/server:1.36.0
+    image: registry.lazycat.cloud/czyt/vaultwarden/server:02c03bb0df67de90
     binds:
       - /lzcapp/var/data:/data/
 
