@@ -7,22 +7,19 @@ application:
     - id: admin
       title: "Vaultwarden Admin Panel"
       path: /admin
-
   background_task: true
   public_path:
     - /
-
   upstreams:
     - location: /
       backend: http://vaultwarden:80/
-
 services:
   vaultwarden:
     #  vaultwarden/server:1.36.0
-    image: registry.lazycat.cloud/czyt/vaultwarden/server:02c03bb0df67de90
+    # upstream: docker.io/vaultwarden/server:1.36.0
+    image: registry.lazycat.cloud/czyt/vaultwarden/server:4d48597cc973c0f3
     binds:
       - /lzcapp/var/data:/data/
-
 {{ if .U.enable_auto_backup }}
   vaultwarden-backup:
     # czyt/rclone-backup:1.1.11
@@ -42,28 +39,20 @@ services:
       # rclone远端配置
       - RCLONE_REMOTE_NAME={{.U.rclone_remote_name}}
       - RCLONE_REMOTE_DIR={{.U.rclone_remote_dir}}
-
       - RCLONE_REMOTE_NAME_1={{.U.rclone_remote_name_1}}
       - RCLONE_REMOTE_DIR_1={{.U.rclone_remote_dir_1}}
-
       - RCLONE_REMOTE_NAME_2={{.U.rclone_remote_name_2}}
       - RCLONE_REMOTE_DIR_2={{.U.rclone_remote_dir_2}}
-
       - RCLONE_REMOTE_NAME_3={{.U.rclone_remote_name_3}}
       - RCLONE_REMOTE_DIR_3={{.U.rclone_remote_dir_3}}
-
       - RCLONE_REMOTE_NAME_4={{.U.rclone_remote_name_4}}
       - RCLONE_REMOTE_DIR_4={{.U.rclone_remote_dir_4}}
-
       - RCLONE_REMOTE_NAME_5={{.U.rclone_remote_name_5}}
       - RCLONE_REMOTE_DIR_5={{.U.rclone_remote_dir_5}}
-
       - RCLONE_REMOTE_NAME_6={{.U.rclone_remote_name_6}}
       - RCLONE_REMOTE_DIR_6={{.U.rclone_remote_dir_6}}
-
       - RCLONE_REMOTE_NAME_7={{.U.rclone_remote_name_7}}
       - RCLONE_REMOTE_DIR_7={{.U.rclone_remote_dir_7}}
-
       - RCLONE_REMOTE_NAME_8={{.U.rclone_remote_name_8}}
       - RCLONE_REMOTE_DIR_8={{.U.rclone_remote_dir_8}}
       #   PING_URL: ''
@@ -88,7 +77,6 @@ services:
       - SERVERCHAN_WHEN_START={{.U.serverchan_when_start}}
       - SERVERCHAN_WHEN_SUCCESS={{.U.serverchan_when_success}}
       - SERVERCHAN_WHEN_FAILURE={{.U.serverchan_when_failure}}
-
     binds:
       - /lzcapp/var/data:/data/
       - /lzcapp/var/config:/config/
