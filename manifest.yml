@@ -18,7 +18,6 @@ application:
 
 services:
   vaultwarden:
-    container_name: vaultwarden
     #  vaultwarden/server:1.36.0
     image: registry.lazycat.cloud/czyt/vaultwarden/server:02c03bb0df67de90
     binds:
