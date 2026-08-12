@@ -8,7 +8,7 @@ params:
   - id: time_zone_for_backup
     type: string
     name: "time zone for backup"
-    default_value: "CST"
+    default_value: "Asia/Shanghai"
     optional: true
     description: "the time zone for backup"
 
@@ -43,12 +43,14 @@ params:
     type: bool
     name: "enable backup compression"
     default_value: true
+    optional: true
     description: "whether to enable backup compression"
 
   - id: backup_compression_type
     type: string
     name: "compression type"
     default_value: "7z"
+    optional: true
     description: "the compression type for backup,can be zip or 7z"
 
   - id: backup_compression_password
@@ -178,6 +180,7 @@ params:
     type: bool
     name: "enable sending notify via server chan"
     default_value: false
+    optional: true
     description: "you can login from the https://sc3.ft07.com to start"
 
   - id: serverchan_sendkey
@@ -211,6 +214,7 @@ params:
     type: bool
     name: "Enable sending mail."
     default_value: false
+    optional: true
     description: "enable mail smtp，ref https://github.com/ttionya/vaultwarden-backup/issues/117#issuecomment-1691443179"
 
   - id: mail_smtp_variables
@@ -224,25 +228,28 @@ params:
     type: string
     name: "mail to"
     optional: true
-    default_value: "czyt@w.cn"
+    default_value: "coder@lazycat.cloud"
     description: "The recipient of the notification email."
 
   - id: mail_when_success
     type: bool
     name: "mail when success"
     default_value: true
+    optional: true
     description: "Send an email when the backup completes successfully."
 
   - id: mail_when_failure
     type: bool
     name: "mail when failure"
     default_value: true
+    optional: true
     description: "Send an email if the backup fails."
 
   - id: mail_force_thread
     type: bool
     name: "mail force thread"
     default_value: false
+    optional: true
     description: "Particularly useful when mail clients fail to group related messages in conversation view despite identical subjects."
 
 locales:
