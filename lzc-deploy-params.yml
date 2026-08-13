@@ -1,16 +1,17 @@
 params:
-  - id: enable_auto_backup
-    type: bool
-    name: "enable backup"
-    default_value: true
-    description: "whether to enable backup,if set to false.will start vaultwarden only，and the other params are un-nessary"
 
   - id: time_zone_for_backup
     type: string
     name: "time zone for backup"
     default_value: "Asia/Shanghai"
     optional: true
-    description: "the time zone for backup"
+    description: "IANA time zone used to evaluate the backup cron schedule and generate backup timestamps. Examples: Asia/Shanghai (UTC+8), UTC, Europe/London, America/New_York. Regions with daylight saving time will follow local clock changes. Default: Asia/Shanghai."
+
+  - id: enable_auto_backup
+    type: bool
+    name: "enable backup"
+    default_value: true
+    description: "whether to enable backup,if set to false.will start vaultwarden only，and the other params are un-nessary"
 
   - id: rclone_global_flag
     type: string
@@ -360,7 +361,7 @@ locales:
 
     time_zone_for_backup:
       name: "备份任务时区"
-      description: "备份任务的时区"
+      description: "用于计算备份 Cron 执行时间和生成备份时间戳的 IANA 时区。常用示例：Asia/Shanghai（中国标准时间，UTC+8）、UTC（协调世界时）、Europe/London（伦敦）、America/New_York（纽约）。采用夏令时的地区会随当地时间自动调整。默认为 Asia/Shanghai。"
 
     mail_smtp_enable:
       name: "启用邮件发送"
