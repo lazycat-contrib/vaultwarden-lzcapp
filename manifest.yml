@@ -31,8 +31,8 @@ services:
       - /lzcapp/var/data:/data/
 {{ if .U.enable_auto_backup }}
   vaultwarden-backup:
-    # czyt/rclone-backup:2.0.4
-    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:1e4ffe99be90a68d
+    # czyt/rclone-backup:2.0.5
+    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:eb637ee1a0f527ee
     environment:
       - RCLONE_BACKUP_SITE_NAME="Vaultwarden+ Bakcup"
       - BACKUP_FOLDER_NAME=data
