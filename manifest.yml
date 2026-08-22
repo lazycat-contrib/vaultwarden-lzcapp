@@ -25,14 +25,14 @@ application:
 services:
   vaultwarden:
     #  vaultwarden/server:1.36.0
-    # upstream: docker.io/vaultwarden/server:1.37.1
-    image: registry.lazycat.cloud/czyt/vaultwarden/server:3fa6003e504eb34a
+    # upstream: docker.io/vaultwarden/server:1.37.2
+    image: registry.lazycat.cloud/czyt/vaultwarden/server:11eea7cccbe5dbb7
     binds:
       - /lzcapp/var/data:/data/
 {{ if .U.enable_auto_backup }}
   vaultwarden-backup:
     # czyt/rclone-backup:2.2.2
-    image:  registry.lazycat.cloud/czyt/czyt/rclone-backup:b73553f95bed6174
+    image: registry.lazycat.cloud/czyt/czyt/rclone-backup:b73553f95bed6174
     environment:
       - RCLONE_BACKUP_SITE_NAME="Vaultwarden+ Bakcup"
       - BACKUP_FOLDER_NAME=data
