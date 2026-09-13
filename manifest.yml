@@ -25,8 +25,8 @@ application:
 services:
   vaultwarden:
     #  vaultwarden/server:1.36.0
-    # upstream: docker.io/vaultwarden/server:1.37.2
-    image: registry.lazycat.cloud/czyt/vaultwarden/server:11eea7cccbe5dbb7
+    # upstream: docker.io/vaultwarden/server:1.37.3
+    image: registry.lazycat.cloud/czyt/vaultwarden/server:3330f75970bea610
     binds:
       - /lzcapp/var/data:/data/
 {{ if .U.enable_auto_backup }}
